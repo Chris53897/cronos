@@ -5,6 +5,7 @@ namespace MyBuilder\Cronos\Tests\Updater;
 use MyBuilder\Cronos\Formatter\Cron;
 use MyBuilder\Cronos\Updater\CronManipulator;
 use MyBuilder\Cronos\Updater\CronUpdater;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class CronUpdaterTest extends TestCase
@@ -22,6 +23,7 @@ class CronUpdaterTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function shouldReplaceContent(): void
     {
         $this->updater->replaceWith(new Cron());
@@ -32,6 +34,7 @@ class CronUpdaterTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function shouldAppendKeyIfNotExist(): void
     {
         $this->manipulatorStub->contents = <<<CRON
@@ -67,6 +70,7 @@ CRON;
     /**
      * @test
      */
+    #[Test]
     public function shouldReplaceKeyIfExist(): void
     {
         $this->manipulatorStub->contents = <<<CRON

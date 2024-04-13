@@ -3,6 +3,7 @@
 namespace MyBuilder\Cronos\Tests\Formatter;
 
 use MyBuilder\Cronos\Formatter\Cron;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class CronTest extends TestCase
@@ -17,6 +18,7 @@ class CronTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function shouldBuildConfiguration(): void
     {
         $this->cron
